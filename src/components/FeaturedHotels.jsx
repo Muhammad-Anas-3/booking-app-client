@@ -34,7 +34,7 @@ const FeaturedHotels = () => {
 
   return (
     <>
-      {loading && data.length ? (
+      {loading ? (
         <>
           {skeletonArray.map((_, index) => (
             <SkeletonLoading key={index} />
@@ -42,37 +42,35 @@ const FeaturedHotels = () => {
         </>
       ) : (
         <>
-          {data.length > 0
-            ? data.map((hotel) => (
-                <div
-                  key={hotel._id}
-                  className="w-[290px] mx-auto overflow-hidden bg-white shadow-xl rounded-md"
-                >
-                  <img
-                    className="w-full h-48 object-cover"
-                    src={img1}
-                    alt="image-1"
-                  />
-                  <div className="sm:p-4 p-1">
-                    <h2 className="text-[18px] text-gray-800 font-semibold mb-2">
-                      {hotel.name}
-                    </h2>
-                    <p className="text-gray-600 sm:mb-4 mb-1">{hotel.desc}</p>
-                    <div className="flex justify-between items-center">
-                      <p className="text-gray-700 font-semibold">
-                        ${hotel.cheapestPrice}{" "}
-                      </p>
-                      <button
-                        onClick={() => handleClick(hotel._id)}
-                        className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
-                      >
-                        See Details
-                      </button>
-                    </div>
-                  </div>
+          {data.map((hotel) => (
+            <div
+              key={hotel._id}
+              className="w-[290px] mx-auto overflow-hidden bg-white shadow-xl rounded-md"
+            >
+              <img
+                className="w-full h-48 object-cover"
+                src={img1}
+                alt="image-1"
+              />
+              <div className="sm:p-4 p-1">
+                <h2 className="text-[18px] text-gray-800 font-semibold mb-2">
+                  {hotel.name}
+                </h2>
+                <p className="text-gray-600 sm:mb-4 mb-1">{hotel.desc}</p>
+                <div className="flex justify-between items-center">
+                  <p className="text-gray-700 font-semibold">
+                    ${hotel.cheapestPrice}{" "}
+                  </p>
+                  <button
+                    onClick={() => handleClick(hotel._id)}
+                    className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
+                  >
+                    See Details
+                  </button>
                 </div>
-              ))
-            : ""}
+              </div>
+            </div>
+          ))}
         </>
       )}
     </>
