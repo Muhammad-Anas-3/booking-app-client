@@ -6,7 +6,7 @@ import Footer from "../../components/Footer";
 import useFetch from "../../Hooks/useFetch";
 
 const Home = () => {
-  const { data } = useFetch("http://localhost:3000/api/v1/hotel");
+  const { data } = useFetch("https://booking-app-backend-khaki.vercel.app/api/v1/hotel");
 
   // to extract only unique city name for example if we have two or more hotels with same city name it will give him one city name that it.
   const uniqueCitiesName = [...new Set(data.map((item) => item.city))];

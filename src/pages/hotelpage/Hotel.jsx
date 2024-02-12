@@ -34,7 +34,7 @@ const Hotel = () => {
   const minPriceParam = minPrice ? `&min=${minPrice}` : "";
   const maxPriceParam = maxPrice ? `&max=${maxPrice}` : "";
 
-  const apiUrl = `http://localhost:3000/api/v1/hotel?city=${search}${minPriceParam}${maxPriceParam}`;
+  const apiUrl = `https://booking-app-backend-khaki.vercel.app/api/v1/hotel?city=${search}${minPriceParam}${maxPriceParam}`;
 
   const { data, loading } = useFetch(apiUrl);
 

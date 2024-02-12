@@ -28,7 +28,7 @@ const SingleHotel = () => {
     try {
       setRoomLoading(true);
       const res = await axios.get(
-        `http://localhost:3000/api/v1/hotel/hotelrooms/${hotelid}`
+        `https://booking-app-backend-khaki.vercel.app/api/v1/hotel/hotelrooms/${hotelid}`
       );
       setRoomLoading(false);
       setRooms(res.data);
@@ -59,7 +59,7 @@ const SingleHotel = () => {
   };
   const hotelid = location.pathname.split("/").pop();
 
-  const hotelUrl = `http://localhost:3000/api/v1/hotel/find/${hotelid}`;
+  const hotelUrl = `https://booking-app-backend-khaki.vercel.app/api/v1/hotel/find/${hotelid}`;
   const { data, loading } = useFetch(hotelUrl);
 
   useEffect(() => {
@@ -67,7 +67,7 @@ const SingleHotel = () => {
       try {
         setRoomLoading(true);
         const res = await axios.get(
-          `http://localhost:3000/api/v1/hotel/hotelrooms/${hotelid}`
+          `https://booking-app-backend-khaki.vercel.app/api/v1/hotel/hotelrooms/${hotelid}`
         );
         setRoomLoading(false);
         setRooms(res.data);

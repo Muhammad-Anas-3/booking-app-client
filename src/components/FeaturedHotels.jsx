@@ -23,7 +23,7 @@ const FeaturedHotels = () => {
   const navigate = useNavigate();
 
   const { data, loading } = useFetch(
-    "http://localhost:3000/api/v1/hotel?limit=3&featured=true"
+    "https://booking-app-backend-khaki.vercel.app/api/v1/hotel?limit=3&featured=true"
   );
 
   const handleClick = (hotelId) => {

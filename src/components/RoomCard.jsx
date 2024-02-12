@@ -53,7 +53,7 @@ const RoomCard = ({ room, hotelid, handleUpdate }) => {
     }
     try {
       await axios.put(
-        `http://localhost:3000/api/v1/room/updateroom/${hotelid}/${room._id}`,
+        `https://booking-app-backend-khaki.vercel.app/api/v1/room/updateroom/${hotelid}/${room._id}`,
         { isBooked: true, selectedNights: selectedNights }
       );
       setAlert(true);
@@ -112,7 +112,7 @@ const RoomCard = ({ room, hotelid, handleUpdate }) => {
           </div>
           <div className="button">
             {room.isBooked ? (
-              <h2 className="text-[18px] my-2 p-2 font-bold text-black bg-gray-400">{`This room is already booked for ${room.selectedNights} days.`}</h2>
+              <h2 className="text-[18px] my-2 p-2 font-bold text-black bg-gray-400">{`This room is already booked for ${room.selectedNights} nights.`}</h2>
             ) : (
               <button
                 onClick={handleBook}
