@@ -13,6 +13,8 @@ const Signup = () => {
 
   const { dispatch, loading, error } = useContext(AuthContext);
 
+  console.log(loading)
+
   const handleSignup = async (e) => {
     e.preventDefault();
     dispatch({ type: "SIGNUP_START" });
